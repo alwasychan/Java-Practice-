@@ -22,7 +22,7 @@ public class AgeChecker{
         }
         
         catch(AgeException e){
-            System.out.println("Caught Exception: " + e.getMessage());
+            System.out.println("Not Eligible!!  ");
         }
     }
 }
