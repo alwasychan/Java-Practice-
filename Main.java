@@ -1,59 +1,44 @@
-package hikikomori;
-
-import java.util.Scanner;
-
-class Rectangle {
-    private double height;
-    private double width;
-
-   
-    public Rectangle(double height, double width) {
-        this.height = height;
-        this.width = width;
-    }
 
 
-    public double get_height() {
-        return height;
-    }
-
-    
-    public double get_width() {
-        return width;
-    }
-
-    
-    public void set_value(double height, double width) {
-        this.height = height;
-        this.width = width;
-    }
-}
-
-class Area { 
-    public double calc_area(Rectangle rect) {
-        return rect.get_height() * rect.get_width();
-    }
-}
 
 
-public class Main { 
+
+
+
+
+import java.io.*;
+import java.util.*;
+
+
+public class Main {
     public static void main(String[] args) {
-        Scanner scnr = new Scanner(System.in);
+        try{
+            File myfile = new File("abc.txt");
+            myfile.createNewFile();
+            FileWriter my = new FileWriter(myfile);
+            Scanner in = new Scanner(System.in);
+            System.out.println("Enter the number :");
+            
+            int n = in.nextInt();
+            for(int i = 0; i < n; i++){
+                String coursecode = in.next();
+                String score = in.next();
+            }
+            
+            my.close();
+            Scanner in = new Scanner(System.in);
+            while(in.hasNext()){
+                String coursecode = in.next();
+                String score = in.next();
+                System.out.println(coursecode + score);
+               
+            }
+            
+            
+        } catch(Exception e){
+            System.out.println(e);
+        }
         
-        System.out.println("Enter the height of rectangle: ");
-        double height = scnr.nextDouble();
-        
-        System.out.println("Enter the width of rectangle: ");
-        double width = scnr.nextDouble();
-             
-        Rectangle rectangle = new Rectangle(height, width);
-          
-        Area areaCalculator = new Area(); 
-        
-        double calculatedArea = areaCalculator.calc_area(rectangle);
-        
-        System.out.println("The Area of the rectangle is: " + calculatedArea);
-        
-        scnr.close();
     }
+    
 }
